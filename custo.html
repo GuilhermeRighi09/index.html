@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Encontre as melhores costureiras da região" />
+  <meta name="keywords" content="Customizer Um novo jeito de se personalizar!" />
+  <title>Customizerbr</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #F5F1ED;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #e4c993;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 600px;
+      height: auto;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background-color: #e4c993;
+      color: #ffffff;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      border: 1px solid #ce7c39;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: #ffffff;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #fcb898;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-radius: 8px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #f7e5c3;
+      transform: scale(1.05);
+    }
+
+    nav .cta {
+      background-color: #f4d8a4;
+      font-weight: 600;
+    }
+
+    .maps {
+      display: none;
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .galeria-produtos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .product-card {
+      text-align: center;
+      background-color: #f7e5c3;
+      border: 1px solid #f7e5c3;
+      padding: 15px;
+      border-radius: 10px;
+      width: 23%;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 250px;
+    }
+
+    .product-card button {
+      background-color: #e6cc9c;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      margin-top: auto;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      margin: 10px 0;
+      color: #f7e5c3;
+      text-align: center;
+    }
+
+    .product-card button {
+      background-color: #ceb78c;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .product-card button:hover {
+      background-color: #ead1a3;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background-color: #eaca89;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #efcd8f;
+    }
+
+    footer {
+      background-color: #f4d397;
+      color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto 20px;
+    }
+
+    .footer-content div {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-content a {
+      color: #ffffff;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+    }
+
+    .footer-content a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-content i {
+      margin-right: 8px;
+    }
+
+    .centered-image {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .centered-image img {
+      max-width: 100%;
+      height: auto;
+      max-height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.imgur.com/Usir8s6.png" alt="Logotipo Customizer" loading="lazy" />
+    <p>Produza as melhores roupas sob medida do Brasil</p>
+  </header>
+
+  <main>
+    <nav>
+      <div class="gel" onclick="toggleMenu()"></div>
+      <ul id="nav-menu">
+        <li><a href="#produtos" aria-label="Navegar para seção Produtos">Produtos</a></li>
+        <li><a href="#nossa-empresa" aria-label="Navegar para seção Nossa Empresa">Nossa Empresa</a></li>
+        <li><a href="#diferencial" aria-label="Navegar para seção Diferencial">Diferencial</a></li>
+        <li><a href="#contato" aria-label="Navegar para seção Contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <section id="nossa-empresa">
+      <h2>Nossa Empresa</h2>
+      <p>Somos a PraLife e levamos até você as melhores opções do mercado da moda feita sob medida.</p>
+    </section>
+
+    <section id="produtos-detalhes">
+      <h2>Encontre aqui a sua costureira</h2>
+      <div class="centered-image">
+        <img src="https://www.google.com/imgres?q=mapa%20no%20google%20maps&imgurl=https%3A%2F%2Fimg.odcdn.com.br%2Fwp-content%2Fuploads%2F2018%2F12%2F20181218065336.jpg&imgrefurl=https%3A%2F%2Folhardigital.com.br%2F2018%2F12%2F18%2Fnoticias%2Fgoogle-maps-guia-completo-para-usar-os-principais-recursos%2F&docid=QJgToZCl6DYqqM&tbnid=wzd7T4aOc6VMUM&vet=12ahUKEwiJrqjDoJaNAxU7IbkGHf-5FWcQM3oFCIMBEAA..i&w=900&h=572&hcb=2&ved=2ahUKEwiJrqjDoJaNAxU7IbkGHf-5FWcQM3oFCIMBEAA" alt="Customizer Logo" loading="lazy" />
+      </div>
+    </section>
+
+    <section id="diferencial">
+      <h2>Diferencial</h2>
+      <p>Você é livre para criar e personalizar qualquer peça de roupa.</p>
+    </section>
+
+    <section id="contato">
+      <h2>Entre em Contato</h2>
+      <form class="contact-form" action="https://formspree.io/f/SEU_ID_AQUI" method="POST">
+        <input type="text" name="name" placeholder="Seu Nome" required />
+        <input type="email" name="email" placeholder="Seu Email" required />
+        <input name="message" placeholder="Sua Mensagem" required />
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>Contato</h3>
+        <p>Email: contato@customizer.com</p>
+        <p>Telefone: (XX) XXXX-XXXX</p>
+      </div>
+      <div>
+        <h3>Siga-nos</h3>
+        <a href="https://instagram.com/customizer"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://facebook.com/customizer"><i class="fab fa-facebook"></i> Facebook</a>
+      </div>
+      <div>
+        <h3>Links Úteis</h3>
+        <a href="/politica-privacidade">Política de Privacidade</a>
+        <a href="/termos-servico">Termos de Serviço</a>
+      </div>
+    </div>
+    <p>© 2025 Customizer. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
